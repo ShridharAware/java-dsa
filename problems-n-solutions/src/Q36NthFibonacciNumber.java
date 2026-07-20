@@ -9,6 +9,6 @@ public class Q36NthFibonacciNumber {
     }
 
     public static void main(String[] args){
-        System.out.println(fibonacci(8));
+        System.out.println(fibonacci(4));
     }
 }

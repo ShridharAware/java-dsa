@@ -24,7 +24,7 @@ public class Q37BinarySearchUsingRecursion {
     public static void main(String[] args){
         int[] arr = {1, 3, 5, 8, 22, 27, 29, 100, 105};
 
-        System.out.println(findIndex(arr, 27));   // 5
+        System.out.println(findIndex(arr, 27));   // 5  
         System.out.println(findIndex(arr, 22));   // 4
         System.out.println(findIndex(arr, 100));  // 7
         System.out.println(findIndex(arr, 10));   // -1

@@ -26,7 +26,30 @@ class Node{
         if(tail == null){
             tail = head;
         }
-        this.size += 1;
+        this.size++;
+    }
+
+    public void insertAtIndex(int val, int index){
+        if(index == 0){
+            insertFirst(val);
+            return;
+        }
+        if(index == size){
+            insertLast(val);
+            return;
+        }
+        if(index > size || index < 0){
+            System.out.println("Wrong index");
+            return;
+        }
+        Node node = new Node(val);
+        Node temp = head;
+        for(int i = 1; i < index; i++){
+            temp = temp.next;
+        }
+        node.next = temp.next;
+        temp.next = node;
+        this.size++;
     }
 
     public void insertLast(int val){
@@ -38,7 +61,7 @@ class Node{
         Node node =  new Node(val);
         tail.next = node;
         tail = node;
-        this.size += 1;
+        this.size++;
     }
 
     public void display(){
@@ -48,6 +71,46 @@ class Node{
             temp = temp.next;
         }
         System.out.println("END");
+    }
+
+    public void deleteFirst() {
+        if(size == 0){
+            System.out.println("No elements in list");
+            return;
+        }
+        head = head.next;
+        this.size--;
+    }
+
+    public void deleteLast() {
+        if(size == 0){
+            System.out.println("No elements in list");
+            return;
+        }
+        Node temp = head;
+        for(int i = 1; i < size-1; i++){
+            temp = temp.next;
+        }
+        temp.next = null;
+        tail = temp;
+        this.size--;
+    }
+
+    public void deleteAtIndex(int index) {
+        if(index == 0){
+            deleteFirst();
+        }
+        if(index > size){
+            System.out.println("Wrong index");
+            return;
+        }
+        Node temp = head;
+        for(int i = 1; i < index; i++){
+            temp = temp.next;
+        }
+        Node current = temp.next;
+        temp.next = current.next;
+        this.size--;
     }
 }
 
@@ -62,6 +125,18 @@ public class Q64LinkedList {
         node.insertLast(30);
         node.insertLast(20);
         node.insertLast(10);
+        node.display();
+
+        node.insertAtIndex(330, 1);
+        node.display();
+
+        node.deleteFirst();
+        node.display();
+
+        node.deleteLast();
+        node.display();
+
+        node.deleteAtIndex(1);
         node.display();
     }
 

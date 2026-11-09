@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class Q72TwoSum {
 
@@ -15,8 +16,21 @@ public class Q72TwoSum {
         return res;
     }
 
+    static int[] twoSumOptimized(int[] nums, int target){
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for(int i = 0; i < nums.length; i++){
+            int needed = target - nums[i];
+            if(map.containsKey(needed)){
+                return new int[]{map.get(needed), i};
+            }
+            map.put(nums[i], i);
+        }
+        return new int[]{-1, -1};
+    }
+
     public static void main(String[] args){
         int[] nums = {2,7,11,15};
         System.out.println(Arrays.toString(twoSum(nums, 9)));
+        System.out.println(Arrays.toString(twoSumOptimized(nums, 9)));
     }
 }

@@ -1,6 +1,6 @@
 public class Q75MaxSubArray {
     static int maxSumSubArray(int[] nums){
-        if(nums.length < 0){
+        if(nums.length == 0){
             return 0;
         }
         int maxSum = nums[0];

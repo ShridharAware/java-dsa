@@ -1,4 +1,4 @@
-public class Q75MaxSubArray {
+public class Q75MaxSumSubArray {
     static int maxSumSubArray(int[] nums){
         if(nums.length == 0){
             return 0;

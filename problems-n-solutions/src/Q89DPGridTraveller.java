@@ -16,6 +16,6 @@ public class Q89DPGridTraveller {
     }
 
     public static void main(String[] args){
-        System.out.println(gridTraveller(18, 18));
+        System.out.println(gridTraveller(18, 18 ));
     }
 }
